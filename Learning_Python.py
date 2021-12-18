@@ -2,7 +2,7 @@
 """
 Created on Mon Nov 29 22:57:26 2021
 
-@author: Kim
+@author: Kim Hinz
 """
 
 # This program includes my learning progress of Python!
@@ -284,5 +284,57 @@ print(math.sqrt(25))
 from math import sqrt                                                      # Imports only the sqrt function
 sqrt(25)
 
-from math import *                                                         # Imports whole module, and don't need math.
+# from math import *                                                         # Imports whole module, and don't need math.
 sqrt(25)
+
+# See all functions in a module
+import math # Imports the math module
+everything = dir(math) # Sets everything to a list of things from math
+print(everything) # Prints 'em all!
+
+# Built-in functions
+maximum = max(2, 5, 10000)
+print(maximum)
+
+minimum = min(3, 8, 1001)
+print(minimum)
+
+absolute = abs(-42)
+print(absolute)
+
+print(type(3))
+print(type(5.6))
+print(type("Hello"))
+
+def distance_from_zero(x):
+  if type(x) in (int, float):
+    return abs(x)
+  else:
+    return "Nope"
+
+# %% Taking a Vacation
+def hotel_cost(nights):
+  return 140 * nights
+
+def plane_ride_cost(city):
+  if city == "Charlotte":
+    return 183
+  elif city == "Tampa":
+    return 220
+  elif city == "Pittsburgh":
+    return 222
+  elif city == "Los Angeles":
+    return 475
+
+def rental_car_cost(days):
+  total = 40 * days
+  if days >= 3 and days < 7:
+    total -= 20
+  elif days >= 7:
+    total -= 50
+  return total
+
+def trip_cost(city, days, spending_money):
+  return hotel_cost(days - 1) + plane_ride_cost(city) + rental_car_cost(days) + spending_money
+
+print(trip_cost("Los Angeles", 5, 600))
