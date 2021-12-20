@@ -338,3 +338,109 @@ def trip_cost(city, days, spending_money):
   return hotel_cost(days - 1) + plane_ride_cost(city) + rental_car_cost(days) + spending_money
 
 print(trip_cost("Los Angeles", 5, 600))
+
+# %% Python Lists and Dictionaries
+list_name = ["item_1", "item_2"]
+empty_list = []                                                                # Lists can also be empty
+
+zoo_animals = ["pangolin", "cassowary", "sloth", "tiger"]
+
+if len(zoo_animals) > 3:
+  print("The first animal at the zoo is the " + zoo_animals[0])                # Indexing starts at 0
+  print("The second animal at the zoo is the " + zoo_animals[1])
+  print("The third animal at the zoo is the " + zoo_animals[2])
+  print("The fourth animal at the zoo is the " + zoo_animals[3])
+
+zoo_animals[2] = "hyena"                                                       # Can easily change the items
+
+suitcase = [] 
+suitcase.append("sunglasses")
+list_length = len(suitcase)
+print("There are %d items in the suitcase." % (list_length))
+print(suitcase)
+
+suitcase = ["sunglasses", "hat", "passport", "laptop", "suit", "shoes"]
+first = suitcase[0:2]                                                          # NOTE: THESE EACH TAKE ONLY TWO ITEMS. I KNOW, IT'S STUPID!
+middle = suitcase[2:4]                                                         # First index is item_you_want - 1
+last =  suitcase[4:6]                                                          # Second index last item you want
+
+# THIS ALSO WORKS FOR LISTS!!!
+animals = "catdogfrog"
+cat = animals[:3]
+dog = animals[3:6]
+frog = animals[6:]
+
+animals = ["aardvark", "badger", "duck", "emu", "fennec fox"]
+duck_index = animals.index("duck")                                             # Find the index of an item
+animals.insert(2, "cobra")                                                     # Inserts an item at that index
+print(animals)
+
+### FOR LOOPS
+my_list = [1,9,3,8,5,7]
+for number in my_list:
+  print(number * 2)
+
+### Sort Lists
+start_list = [5, 3, 1, 2, 4]
+square_list = []
+for number in start_list:
+  square_list.append(number ** 2)
+square_list.sort()
+print(square_list)
+
+### Creating dictionaries
+# Assigning a dictionary with three key-value pairs to residents:
+residents = {'Puffin' : 104, 'Sloth' : 105, 'Burmese Python' : 106}
+
+print(residents["Puffin"]) # Prints Puffin's room number
+print(residents["Sloth"])
+print(residents["Burmese Python"])
+
+menu = {} # Empty dictionary
+menu['Chicken Alfredo'] = 14.50 # Adding new key-value pair
+menu["Spaghetti"] = 13.50
+menu["Lasagne"] = 14.50
+menu["Bolognese"] = 15.50
+
+print("There are " + str(len(menu)) + " items on the menu.")
+
+zoo_animals = { 'Unicorn' : 'Cotton Candy House',
+'Sloth' : 'Rainforest Exhibit',
+'Bengal Tiger' : 'Jungle House',
+'Atlantic Puffin' : 'Arctic Exhibit',
+'Rockhopper Penguin' : 'Arctic Exhibit'}
+del zoo_animals['Unicorn']
+del zoo_animals["Sloth"] # Can't put these three together in one commmand :(
+del zoo_animals["Bengal Tiger"]
+
+zoo_animals["Rockhopper Penguin"] = "Vet"
+
+print(zoo_animals)
+
+### Back to lists
+backpack = ['xylophone', 'dagger', 'tent', 'bread loaf']
+backpack.remove("dagger")
+
+### SUMMARY
+inventory = {
+  'gold' : 500,
+  'pouch' : ['flint', 'twine', 'gemstone'], # Assigned a new list to 'pouch' key
+  'backpack' : ['xylophone','dagger', 'bedroll','bread loaf']
+}
+
+# Adding a key 'burlap bag' and assigning a list to it
+inventory['burlap bag'] = ['apple', 'small ruby', 'three-toed sloth']
+
+# Sorting the list found under the key 'pouch'
+inventory['pouch'].sort() 
+
+# Your code here
+inventory["pocket"] = ["seashell", "strange berry", "lint"]
+
+inventory["backpack"].sort()
+
+inventory["backpack"].remove("dagger")
+
+inventory["gold"] += 50
+
+# %% A Day at the Supermarket
